@@ -20,14 +20,14 @@ import PuzzleStore from '../stores/PuzzleStore'
   }, [])
 
   return (
-    <div className="flex h-screen w-screen flex-col items-center justify-center bg-gray-600">
+    <div className="flex h-screen w-screen flex-col items-center justify-center bg-gray-600 px-3">
       <h1 className="text-6xl font-bold text-gray-200 uppercase">Eldrow</h1><h2 className="mb-4">A practice arena for your favorite word puzzle</h2>
       {store.guesses.map((x, i) => (<Guess key={i} word={store.word} guess={store.guesses[i]} isGuessed={i < store.currentGuess} />))}
       {store.won && <h1>Nice Job</h1>}
       {store.lost && <h1 className="my-3">Better luck next time</h1>}
       {(store.won || store.lost) && (<button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" onClick={store.init}>Play Again</button>)}
       
-      <Qwerty className="mt-4 mx-2" store={store}/>  
+      <Qwerty className="mt-4" store={store}/>  
     
     </div>
   )
