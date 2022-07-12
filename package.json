@@ -6,7 +6,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "latest",
+    "mobx": "^6.6.1",
+    "mobx-react-lite": "^3.4.0",
+    "next": "^12.2.2",
     "react": "18.1.0",
     "react-dom": "18.1.0"
   },
