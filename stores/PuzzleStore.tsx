@@ -66,6 +66,6 @@ export default {
         }
     },
     handleClick(e) {
-        console.log(e.target)
+        console.log(e.target.label)
     }
 }
