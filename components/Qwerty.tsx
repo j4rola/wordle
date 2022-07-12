@@ -3,9 +3,13 @@ import { observer } from 'mobx-react-lite'
 
 
 export default observer(function Qwerty({ store }) {
+
+    const getLetter = (e) => {
+        console.log(e.target)
+    }
     const qwerty = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'] 
   return (
-    <div>
+    <div className="mt-4">
      {qwerty.map((row) => (   
         <div className="flex justify-center">
             {row.split('').map((key) => {
@@ -17,7 +21,7 @@ export default observer(function Qwerty({ store }) {
                 ? 'bg-gray-400' 
                 : 'bg-gray-200'
                 return (
-                <div className={`m-px flex h-10 w-10 items-center justify-center rounded-md ${bgColor} uppercase`}> 
+                <div onClick={(e) => getLetter(e)} className={`m-px flex h-10 w-10 items-center justify-center rounded-md ${bgColor} uppercase`}> 
                     {key}  
                 </div>    
                 )  
