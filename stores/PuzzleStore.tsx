@@ -66,6 +66,28 @@ export default {
         }
     },
     handleClick(e) {
-        console.log(e.target.id)
+        const letter = e.target.id
+        
+        if (this.won || this.lost) {
+            return 
+        }
+
+        if (letter === 'Enter') {
+            return this.submitGuess()
+        }
+
+        if (letter === 'Backspace') {
+            this.guesses[this.currentGuess] = this.guesses[this.currentGuess].slice(
+                0,
+                this.guesses[this.currentGuess].length - 1 
+            )
+            return
+        }
+
+        if (this.guesses[this.currentGuess].length < 5 && letter.match(/^[A-z]$/)) {
+            this.guesses[this.currentGuess] =
+                this.guesses[this.currentGuess] + letter.toLowerCase()
+        }
+
     }
 }
