@@ -66,6 +66,6 @@ export default {
         }
     },
     handleClick(e) {
-        console.log(e.target.label)
+        console.log(e.target.id)
     }
 }
