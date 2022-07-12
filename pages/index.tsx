@@ -27,7 +27,7 @@ import PuzzleStore from '../stores/PuzzleStore'
       {store.lost && <h1 className="my-3">Better luck next time</h1>}
       {(store.won || store.lost) && (<button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" onClick={store.init}>Play Again</button>)}
       
-      <Qwerty store={store}/>  
+      <Qwerty className="mt-4" store={store}/>  
     
     </div>
   )
