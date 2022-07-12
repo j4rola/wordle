@@ -3,6 +3,7 @@ import { observer, useLocalObservable } from "mobx-react-lite";
 import { useEffect } from 'react' 
 import Qwerty from '../components/Qwerty'
 import Guess from '../components/Guess'
+import Buttons from '../components/Buttons'
 import PuzzleStore from '../stores/PuzzleStore'
 
 
@@ -28,7 +29,7 @@ import PuzzleStore from '../stores/PuzzleStore'
       {(store.won || store.lost) && (<button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" onClick={store.init}>Play Again</button>)}
       
       <Qwerty  store={store}/>  
-    
+      <Buttons store={store}/>
     </div>
   )
 }) 
