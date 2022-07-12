@@ -65,4 +65,7 @@ export default {
                 this.guesses[this.currentGuess] + e.key.toLowerCase()
         }
     },
+    handleClick(e) {
+        console.log(e.target)
+    }
 }

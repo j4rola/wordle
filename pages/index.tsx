@@ -13,7 +13,7 @@ import PuzzleStore from '../stores/PuzzleStore'
   useEffect(() => {
     store.init()
     window.addEventListener('keyup', store.handleKeyup)
-
+    
     return () => {
       window.removeEventListener('keyup', store.handleKeyup)
     }

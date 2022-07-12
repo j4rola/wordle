@@ -1,8 +1,17 @@
 // @ts-nocheck
 import { observer } from 'mobx-react-lite'
-
+import { useEffect } from 'react'
 
 export default observer(function Qwerty({ store }) {
+
+    useEffect(() => {
+        
+        window.addEventListener('click', store.handleClick)
+        
+        return () => { 
+          window.removeEventListener('click', store.handleClick)
+        }
+      }, []) 
 
     const getLetter = () => {
         console.log('testing function')
@@ -21,7 +30,7 @@ export default observer(function Qwerty({ store }) {
                 ? 'bg-gray-400' 
                 : 'bg-gray-200'
                 return (
-                <div onClick={getLetter()} className={`m-px flex h-10 w-10 items-center justify-center rounded-md ${bgColor} uppercase`}> 
+                <div label={key} className={`m-px flex h-10 w-10 items-center justify-center rounded-md ${bgColor} uppercase`}> 
                     {key}  
                 </div>    
                 )  
