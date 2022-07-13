@@ -43,7 +43,7 @@ export default {
         } 
     },
     handleKeyup(e) {
-        if (this.won || this.lost) {
+        if (this.won || this.lost) {   
             return 
         }
 
