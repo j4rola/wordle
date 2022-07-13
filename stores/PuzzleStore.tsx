@@ -8,7 +8,10 @@ export default {
         return this.guesses[this.currentGuess - 1] === this.word
     },
     get lost() {
-        return this.currentGuess === 6   
+        if(this.guesses[this.currentGuess - 1] !== this.word && this.currentGuess === 6){
+            return true
+        }
+        
     },
     get allGuesses() {
         return this.guesses.slice(0, this.currentGuess).join('').split('')
