@@ -12,7 +12,7 @@ export default function Guess({ isGuessed, guess, word }) {
           ? 'bg-gray-700' 
           : guess[i] === word[i]
           ? 'bg-green-500'
-          : word.includes(guess[i]) && findDuplicates(guess).indexOf(guess[i]) === 0
+          : word.includes(guess[i]) && findDuplicates([...guess]).indexOf(guess[i]) === 0
           ? 'bg-yellow-400'
           : 'bg-gray-700'   
 
