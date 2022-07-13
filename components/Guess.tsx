@@ -2,6 +2,9 @@
 
 
 export default function Guess({ isGuessed, guess, word }) {
+
+  const findDuplicates = x => x.filter((item, index) => x.indexOf(item) !== index) 
+  
   return (
     <div className="mb-2 grid grid-cols-5 gap-2">
       {new Array(5).fill(0).map((_, i) => {
@@ -9,7 +12,7 @@ export default function Guess({ isGuessed, guess, word }) {
           ? 'bg-gray-700' 
           : guess[i] === word[i]
           ? 'bg-green-500'
-          : word.includes(guess[i])
+          : word.includes(guess[i]) && findDuplicates(guess).indexOf(guess[i]) === 0
           ? 'bg-yellow-400'
           : 'bg-gray-700'   
 
