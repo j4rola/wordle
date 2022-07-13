@@ -30,7 +30,7 @@ export default observer(function Qwerty({ store }) {
                 ? 'bg-gray-400' 
                 : 'bg-gray-200'
                 return (
-                <div id={key} className={`m-px flex h-10 w-10 items-center justify-center rounded-md ${bgColor} uppercase`}> 
+                <div id={key} className={`m-px flex items-center justify-center rounded-md ${bgColor} uppercase`} style={{height: 45, width: 35}}> 
                     {key}     
                 </div>    
                 )  

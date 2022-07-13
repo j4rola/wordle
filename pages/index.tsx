@@ -26,6 +26,7 @@ import PuzzleStore from '../stores/PuzzleStore'
       {store.guesses.map((x, i) => (<Guess key={i} word={store.word} guess={store.guesses[i]} isGuessed={i < store.currentGuess} />))}
       {store.won && <h1 className='my-3'>Nice Job</h1>}
       {store.lost && <h1 className="my-3">Better luck next time</h1>}
+      {store.lost && <h1 className='mb-3'>Answer: {store.word.toUpperCase()}</h1>}
       {(store.won || store.lost) && (<button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" onClick={store.init}>Play Again</button>)}
       
       <Qwerty  store={store}/>  
