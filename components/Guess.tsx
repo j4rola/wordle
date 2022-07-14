@@ -1,9 +1,7 @@
 // @ts-nocheck
 
 
-export default function Guess({ isGuessed, guess, word }) {
-
-  const findDuplicates = x => x.filter((item, index) => x.indexOf(item) !== index) 
+export default function Guess({ isGuessed, guess, word }) { 
   
   return (
     <div className="mb-2 grid grid-cols-5 gap-2">
@@ -12,7 +10,7 @@ export default function Guess({ isGuessed, guess, word }) {
           ? 'bg-gray-700' 
           : guess[i] === word[i]
           ? 'bg-green-500'
-          : word.includes(guess[i]) && findDuplicates([...guess]).indexOf(guess[i]) === 0
+          : word.includes(guess[i])
           ? 'bg-yellow-400'
           : 'bg-gray-700'   
 

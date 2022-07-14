@@ -5,16 +5,16 @@ export default {
     guesses: [],
     currentGuess: 0,
     get won() {
-        return this.guesses[this.currentGuess - 1] === this.word
+        return this.guesses[this.currentGuess - 1] === this.word 
     },
     get lost() {
         if(this.guesses[this.currentGuess - 1] !== this.word && this.currentGuess === 6){
-            return true
+            return true 
         }
         
     },
     get allGuesses() {
-        return this.guesses.slice(0, this.currentGuess).join('').split('')
+        return this.guesses.slice(0, this.currentGuess).join('').split('') 
     },
     get exactGuesses() {
         return (
@@ -81,7 +81,7 @@ export default {
 
     },
     handleBackSpace() {
-        this.guesses[this.currentGuess] = this.guesses[this.currentGuess].slice(
+        this.guesses[this.currentGuess] = this.guesses[this.currentGuess].slice( 
             0,
             this.guesses[this.currentGuess].length - 1 
         )
