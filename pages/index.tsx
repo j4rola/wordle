@@ -21,7 +21,7 @@ import PuzzleStore from '../stores/PuzzleStore'
   }, [])
 
   return (
-    <div className="flex h-screen w-screen flex-col items-center justify-center bg-gray-500 px-3">
+    <div className="flex h-screen w-screen flex-col items-center justify-center bg-gray-500 px-3 py-4">
       <h1 className="text-6xl font-bold text-gray-200 uppercase">Eldrow</h1><h2 className="mb-4 text-gray-200 font-light">A practice arena for your favorite word puzzle</h2>
       {store.guesses.map((x, i) => (<Guess key={i} word={store.word} guess={store.guesses[i]} isGuessed={i < store.currentGuess} />))}
       {store.won && <h1 className='my-3'>Nice Job</h1>}
